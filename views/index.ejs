@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <title><%= title %></title>
+        <link rel='stylesheet' href='/foundation/css/foundation.css' />
+    </head>
+    <body ng-controller="AppController as store">
+        <ul>
+            <li ng-repeat="product in store.products | orderBy: '-price'" ng-hide="product.soldOut">
+                <h1>{{product.name | uppercase}}</h1>
+                <h2>{{product.price | currency}}</h2>
+                <p>{{product.description}}</p>
+                <button ng-show="product.canPurchase"> Add to Cart </button>
+            </li>
+        </ul>
+
+        <script src="/angular/angular.min.js"></script>
+        <script src="/js/modules/app.js"></script>
+    </body>
+</html>

@@ -5,6 +5,18 @@
         this.products = gems;
     });
 
+    app.controller("TabController", function() {
+        this.tab = 1;
+
+        this.setTab = function (index) {
+            this.tab = index;
+        };
+
+        this.isSet = function (index) {
+            return this.tab === index;
+        };
+    });
+
     var gems = [{
         name        : "Cafe",
         price       : "33",
